@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tweets
+  # next line turns text field into array
+  serialize :following, Array
   validates :username, presence: true, uniqueness: true
   mount_uploader :avatar, AvatarUploader
 end

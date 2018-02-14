@@ -4,8 +4,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # Since we don't have a User controller, we're adding things to the legal param list here
+  # the first symbols is the view in which the attribute value would come from 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :bio, :location, :avatar])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :bio, :location, :avatar])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :bio, :location, :avatar, :following])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name, :bio, :location, :avatar, :following])
   end
 end
