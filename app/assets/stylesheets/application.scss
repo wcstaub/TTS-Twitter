@@ -16,3 +16,13 @@
 @import  "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+body {
+	// background-color: #a4d9e9;
+	background-image: url("/assets/pexels-photo-314726.jpeg");
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+nav.navbar-inverse>li{
+ padding-top: 25px;
+ // padding-bottom: 25px;
+}// 
