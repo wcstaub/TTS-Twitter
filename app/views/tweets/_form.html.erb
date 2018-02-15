@@ -1,4 +1,4 @@
-tweets/_form.html.erb
+views/tweets/_form.html.erb
 <%= form_with(model: tweet, local: true) do |form| %>
   <% if tweet.errors.any? %>
 `    <div id="error_explanation">
@@ -12,16 +12,15 @@ tweets/_form.html.erb
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message, id: :tweet_message %>
+  <div class="form-group">
+    <%= form.text_field :message, placeholder: "Enter tweet", class: "form-control"%>
   </div>
 
    <div class="field">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "Submit", class: "btn btn-primary"%>
   </div>
 <% end %>
