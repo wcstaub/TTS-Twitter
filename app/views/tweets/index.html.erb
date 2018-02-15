@@ -15,7 +15,7 @@ tweets/index.html.erb
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
-        <td><%= tweet.message %></td>
+        <td><%= tweet.message.html_safe %></td>
         <td><%= link_to ('@' + tweet.user.username), show_user_path(id: tweet.user.id)%></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
@@ -28,3 +28,4 @@ tweets/index.html.erb
 <br>
 
 <%= link_to 'New Tweet', new_tweet_path %>
+
